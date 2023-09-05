@@ -24,10 +24,10 @@
 
 ## Challenge Statement
 
-    - **Problem:** The Easy Move project aims to address the challenge of finding the shortest route and obtaining weather conditions for a user's desired destination.
-    - **Project Scope:** The project will not provide real-time traffic updates or suggest alternative modes of transportation.
-    - **Target Users:** The project will benefit travelers who seek efficient routes and want to be aware of weather conditions at their destinations.
-    - **Locale Dependency:** The project's functionality is not dependent on any specific locale; it can be used globally.
+- **Problem:** The Easy Move project aims to address the challenge of finding the shortest route and obtaining weather conditions for a user's desired destination.
+- **Project Scope:** The project will not provide real-time traffic updates or suggest alternative modes of transportation.
+- **Target Users:** The project will benefit travelers who seek efficient routes and want to be aware of weather conditions at their destinations.
+- **Locale Dependency:** The project's functionality is not dependent on any specific locale; it can be used globally.
 
 ## Risks
 
