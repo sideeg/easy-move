@@ -19,8 +19,8 @@
     - **Resources:** Code editor (e.g., Visual Studio Code), version control system (e.g., Git), web browser
 
     **Alternate Technology Options and Trade-offs:**
-    1. Instead of Flask, you could have considered Django as an alternative web framework. The trade-off was complexity; Flask's lightweight nature aligns better with the simplicity goal.
-    2. For weather data, you could have chosen the Weather API from a different provider. The trade-off was familiarity; you opted for OpenWeatherMap due to its wide usage and ease of integration.
+    1. Instead of Flask, we could have considered Django as an alternative web framework. The trade-off was complexity; Flask's lightweight nature aligns better with the simplicity goal.
+    2. For weather data, we could have chosen the Weather API from a different provider. The trade-off was familiarity; we opted for OpenWeatherMap due to its wide usage and ease of integration.
 
 ## Challenge Statement
 
@@ -31,7 +31,7 @@
 
 ## Risks
 
-    - **Technical Risks:** A potential technical risk is integrating the APIs smoothly. To mitigate this, you will thoroughly test API interactions and have error-handling mechanisms.
+    - **Technical Risks:** A potential technical risk is integrating the APIs smoothly. To mitigate this, we will thoroughly test API interactions and have error-handling mechanisms.
     - **Non-Technical Risks:** Users' reliance on accurate weather information is a non-technical risk. You will add disclaimers about data accuracy to minimize potential impacts.
 
 ## Infrastructure
