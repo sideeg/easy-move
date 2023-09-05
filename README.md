@@ -31,15 +31,15 @@
 
 ## Risks
 
-    - **Technical Risks:** A potential technical risk is integrating the APIs smoothly. To mitigate this, we will thoroughly test API interactions and have error-handling mechanisms.
-    - **Non-Technical Risks:** Users' reliance on accurate weather information is a non-technical risk. You will add disclaimers about data accuracy to minimize potential impacts.
+- **Technical Risks:** A potential technical risk is integrating the APIs smoothly. To mitigate this, we will thoroughly test API interactions and have error-handling mechanisms.
+- **Non-Technical Risks:** Users' reliance on accurate weather information is a non-technical risk. You will add disclaimers about data accuracy to minimize potential impacts.
 
 ## Infrastructure
 
-    - **Branching and Merging:** The team will use a feature branching model in the Git repository, ensuring each feature is developed independently before merging.
-    - **Deployment Strategy:** The application will be deployed on a cloud platform (e.g., Heroku) using a continuous deployment pipeline.
-    - **Data Population:** Initial data will be populated through API calls and user interactions during application use.
-    - **Testing Tools:** Automated testing will be performed using the unittest framework in Python, ensuring reliability and functionality.
+- **Branching and Merging:** The team will use a feature branching model in the Git repository, ensuring each feature is developed independently before merging.
+- **Deployment Strategy:** The application will be deployed on a cloud platform (e.g., Heroku) using a continuous deployment pipeline.
+- **Data Population:** Initial data will be populated through API calls and user interactions during application use.
+- **Testing Tools:** Automated testing will be performed using the unittest framework in Python, ensuring reliability and functionality.
 
 ## Existing Solutions
 
