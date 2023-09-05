@@ -43,8 +43,8 @@
 
 ## Existing Solutions
 
-    - **Google Maps:** Similar in providing routes but lacks weather information.
-    - **Waze:** Offers real-time traffic data but lacks weather information.
-    - **Weather.com:** Provides weather forecasts but lacks route planning.
+- **Google Maps:** Similar in providing routes but lacks weather information.
+- **Waze:** Offers real-time traffic data but lacks weather information.
+- **Weather.com:** Provides weather forecasts but lacks route planning.
 
     ---
