@@ -14,8 +14,8 @@
 
 ## Technologies Used
 
-    - **Programming Language:** Python
-    - **Libraries/Frameworks:** Flask (for web application), Requests (for API calls), Geopy (for location-based calculations), OpenWeatherMap API (for weather data)
+- **Programming Language:** Python
+- **Libraries/Frameworks:** Flask (for web application), Requests (for API calls), Geopy (for location-based calculations), OpenWeatherMap API (for weather data)
     - **Resources:** Code editor (e.g., Visual Studio Code), version control system (e.g., Git), web browser
 
     **Alternate Technology Options and Trade-offs:**
