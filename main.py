@@ -1,4 +1,9 @@
+
 from flask import Flask, redirect, url_for, request, render_template
+import flaskext_compat
+flaskext_compat.activate()
+from flask.ext import foo
+
 app = Flask(__name__)
 
 @app.route('/')
