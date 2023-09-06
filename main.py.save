@@ -3,20 +3,21 @@ from flask import Flask, redirect, url_for, request, render_template
 #import flaskext_compat
 #flaskext_compat.activate()
 #from flask.ext import foo
-import sqlite3
+
 app = Flask(__name__)
 
-db_file = "/home/ubuntu/easy_move/db/easy_move.db"
+dp_file  = ("/home/ubuntu/easy_move/db/easy_move.db")
 @app.route('/')
 def landing_page():
-        #con = sql.connect("/home/ubuntu/easy_move/db/easy_move.db")
-        conn = sqlite3.connect(db_file)
-        #con.row_factory = sql.Row
-        cur = conn.cursor()
-        cur.execute("select * from user")
-
-        rows = cur.fetchall(); 
-        return render_template("hello.html",rows = rows)
+   	#con = sql.connect("/home/ubuntu/easy_move/db/easy_move.db")
+   	conn = sqlite3.connect(db_file)
+        con.row_factory = sql.Row
+   
+   	cur = con.cursor()
+   	cur.execute("select * from user")
+   
+   	rows = cur.fetchall(); 
+   	return render_template("hello.html",rows = rows)
 	
 
 @app.route('/login',methods = ['POST', 'GET'])
@@ -36,9 +37,9 @@ def register():
          last_name = request.form['last_name']
          email = request.form['email']
          
-         c = sqlite3.connect(db_file)
+         c = sql.connect("/home/ubuntu/easy_move/db/easy_move.db")
          print(c)
-         with sqlite3.connect(db_file) as con:
+         with sql.connect("/home/ubuntu/easy
             cur = con.cursor()
             cur.execute("INSERT INTO user (first_name,last_name,email) VALUES (?,?,?,?)",(first_name,last_name,email) )
             
