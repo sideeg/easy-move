@@ -1,8 +1,7 @@
-
 from flask import Flask, redirect, url_for, request, render_template
-#import flaskext_compat
-#flaskext_compat.activate()
-#from flask.ext import foo
+# import flaskext_compat
+# flaskext_compat.activate()
+# from flask.ext import foo
 import sqlite3
 app = Flask(__name__)
 
@@ -16,8 +15,8 @@ def landing_page():
         cur.execute("select * from user")
 
         rows = cur.fetchall();
-        return rows 
-        return render_template("hello.html",rows = rows)
+        # return rows 
+        return render_template("index.html",rows = rows)
 	
 
 @app.route('/login',methods = ['POST', 'GET'])
