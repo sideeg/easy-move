@@ -10,9 +10,9 @@ db_file = "/home/ubuntu/easy_move/db/easy_move.db"
 def landing_page():
         #con = sql.connect("/home/ubuntu/easy_move/db/easy_move.db")
         conn = sqlite3.connect(db_file)
-        #con.row_factory = sql.Row
+        # con.row_factory = sql.Row
         cur = conn.cursor()
-        cur.execute("select * from user")
+        # cur.execute("select * from user")
 
         rows = cur.fetchall();
         # return rows 
