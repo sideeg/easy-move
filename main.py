@@ -15,7 +15,8 @@ def landing_page():
         cur = conn.cursor()
         cur.execute("select * from user")
 
-        rows = cur.fetchall(); 
+        rows = cur.fetchall();
+        return rows 
         return render_template("hello.html",rows = rows)
 	
 
@@ -43,16 +44,16 @@ def register():
             cur.execute("INSERT INTO user (first_name,last_name,email) VALUES (?,?,?,?)",(first_name,last_name,email) )
             
             con.commit()
-            msg = "Record successfully added"
+            return "Record successfully added"
       except:
          con.rollback()
-         msg = "error in insert operation"
+         return "error in insert operation"
       
-      finally:
+            #finally:
             #return render_template("home.html",msg = msg)
-            con.close()
-            return redirect(url_for('landing_page'))
-
+            #con.close()
+            #return redirect(url_for('landing_page'))
+            #return "fine"
    else:
       #user = request.args.get('nm')
       return render_template('register.html')
