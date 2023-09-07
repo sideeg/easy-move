@@ -14,16 +14,20 @@ def landing_page():
         #con.row_factory = sql.Row
         cur = conn.cursor()
         cur.execute("select * from user")
-
+        #cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
         rows = cur.fetchall();
-        return rows 
+        names = list(map(lambda x: x[0], cur.description))
+        #return names
+        conn.close()
         return render_template("hello.html",rows = rows)
 	
 
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':
+      return request.form
       user = request.form['first_name']
+       
       return render_template('login.html')
    else:
       
@@ -41,18 +45,20 @@ def register():
          print(c)
          with sqlite3.connect(db_file) as con:
             cur = con.cursor()
-            cur.execute("INSERT INTO user (first_name,last_name,email) VALUES (?,?,?,?)",(first_name,last_name,email) )
-            
+            cur.execute("INSERT INTO user  VALUES (?,?,?,?)",(first_name,last_name,email) )
+            #return cur.lastrowid
             con.commit()
             return "Record successfully added"
       except:
+         return cur.lastrowid
          con.rollback()
          return "error in insert operation"
       
-            #finally:
+      finally:
             #return render_template("home.html",msg = msg)
-            #con.close()
-            #return redirect(url_for('landing_page'))
+            con.close()
+            return str(cur.lastrowid) 
+            return redirect(url_for('landing_page'))
             #return "fine"
    else:
       #user = request.args.get('nm')
