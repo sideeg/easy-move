@@ -21,7 +21,7 @@
             <i class="material-icons lock">lock</i> Register
         </div>
 
-        <form>
+        <form action = "{{ url_for('register') }}" method = "POST">
             <div class="input">
                 <div class="input-addon">
                     <i class="material-icons">email</i>
@@ -35,7 +35,13 @@
                 <div class="input-addon">
                     <i class="material-icons">face</i>
                 </div>
-                <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off">
+                <input id="first_name" placeholder="First_name" type="text" required class="validate" autocomplete="off">
+            </div>
+ <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">face</i>
+                </div>
+                <input id="last_name" placeholder="last_name" type="text" required class="validate" autocomplete="off">
             </div>
 
             <div class="clearfix"></div>
@@ -54,10 +60,6 @@
 
             <input type="submit" value="Register" />
         </form>
-
-        <div class="privacy">
-            <a href="#">Privacy Policy</a>
-        </div>
 
         <div class="register">
             <span style="color: #657575">Do you already have an account?</span>

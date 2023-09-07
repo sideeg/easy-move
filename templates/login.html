@@ -21,12 +21,12 @@
             <i class="material-icons lock">lock</i> Login
         </div>
 
-        <form>
+        <form action = "{{ url_for('login') }}" method = "POST">
             <div class="input">
                 <div class="input-addon">
                     <i class="material-icons">face</i>
                 </div>
-                <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off">
+                <input id="first_name" placeholder="first name" type="text" required class="validate" autocomplete="off">
             </div>
 
             <div class="clearfix"></div>
