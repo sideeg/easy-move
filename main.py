@@ -1,8 +1,7 @@
-
 from flask import Flask, redirect, url_for, request, render_template
-#import flaskext_compat
-#flaskext_compat.activate()
-#from flask.ext import foo
+# import flaskext_compat
+# flaskext_compat.activate()
+# from flask.ext import foo
 import sqlite3
 app = Flask(__name__)
 
@@ -11,16 +10,13 @@ db_file = "/home/ubuntu/easy_move/db/easy_move.db"
 def landing_page():
         #con = sql.connect("/home/ubuntu/easy_move/db/easy_move.db")
         conn = sqlite3.connect(db_file)
-        #con.row_factory = sql.Row
         cur = conn.cursor()
         cur.execute("select * from user")
-        #cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        
         rows = cur.fetchall();
-        names = list(map(lambda x: x[0], cur.description))
-        #return names
+        
         conn.close()
-        return render_template("hello.html",rows = rows)
-	
+        return render_template("index.html",rows = rows)
 
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
