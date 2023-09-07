@@ -23,19 +23,19 @@ def landing_page():
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':
-      user = request.form['nm']
+      user = request.form['first_name']
       return render_template('login.html')
    else:
-      user = request.args.get('nm')
+      
       return render_template('login.html')
 
 @app.route('/register',methods = ['POST', 'GET'])
 def register():
    if request.method == 'POST':
       try:
-         first_name = request.form['first_name']
-         last_name = request.form['last_name']
-         email = request.form['email']
+         first_name = 'dd' #request.form['first_name']
+         last_name = 'qq' #request.form['last_name']
+         email = 'aa' #request.form['email']
          
          c = sqlite3.connect(db_file)
          print(c)
