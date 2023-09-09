@@ -8,7 +8,6 @@ app = Flask(__name__)
 db_file = "/home/ubuntu/easy_move/db/easy_move.db"
 @app.route('/')
 def landing_page():
-        #con = sql.connect("/home/ubuntu/easy_move/db/easy_move.db")
         conn = sqlite3.connect(db_file)
         cur = conn.cursor()
         cur.execute("select * from user")
@@ -33,31 +32,28 @@ def login():
 def register():
    if request.method == 'POST':
       try:
-         first_name = 'dd' #request.form['first_name']
-         last_name = 'qq' #request.form['last_name']
-         email = 'aa' #request.form['email']
+         first_name = request.form['first_name']
+         last_name = request.form['last_name']
+         email = request.form['email']
          
          c = sqlite3.connect(db_file)
          print(c)
          with sqlite3.connect(db_file) as con:
             cur = con.cursor()
             cur.execute("INSERT INTO user  VALUES (?,?,?,?)",(first_name,last_name,email) )
-            #return cur.lastrowid
             con.commit()
-            return "Record successfully added"
+            msg =  "Record successfully added"
+		return redirect(url_for('home'),msg=msg)
       except:
-         return cur.lastrowid
          con.rollback()
-         return "error in insert operation"
+         msg = 'somting went wrong please try again'
+         return redirect(url_for('register'),msg=msg)
       
       finally:
-            #return render_template("home.html",msg = msg)
             con.close()
-            return str(cur.lastrowid) 
             return redirect(url_for('landing_page'))
-            #return "fine"
+           
    else:
-      #user = request.args.get('nm')
       return render_template('register.html')
 
 
