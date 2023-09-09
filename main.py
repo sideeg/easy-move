@@ -37,14 +37,14 @@ def register():
          last_name = 'qq' #request.form['last_name']
          email = 'aa' #request.form['email']
          
-         c = sqlite3.connect(db_file)
-         print(c)
-         with sqlite3.connect(db_file) as con:
-            cur = con.cursor()
-            cur.execute("INSERT INTO user  VALUES (?,?,?,?)",(first_name,last_name,email) )
-            #return cur.lastrowid
-            con.commit()
-            return "Record successfully added"
+         con = sqlite3.connect(db_file)
+         
+         #with sqlite3.connect(db_file) as con:
+         cur = con.cursor()
+         cur.execute("INSERT INTO user  VALUES (?,?,?);",(first_name,last_name,email) )
+         #return cur.lastrowid
+         con.commit()
+         return "Record successfully added"
       except:
          return cur.lastrowid
          con.rollback()
@@ -52,8 +52,9 @@ def register():
       
       finally:
             #return render_template("home.html",msg = msg)
-            con.close()
-            return str(cur.lastrowid) 
+            
+            return str(cur.lastrowid )
+            con.close() 
             return redirect(url_for('landing_page'))
             #return "fine"
    else:
