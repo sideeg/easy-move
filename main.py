@@ -36,21 +36,21 @@ def register():
          last_name = request.form['last_name']
          email = request.form['email']
          
-         c = sqlite3.connect(db_file)
-         print(c)
-         with sqlite3.connect(db_file) as con:
-            cur = con.cursor()
-            cur.execute("INSERT INTO user  VALUES (?,?,?,?)",(first_name,last_name,email) )
-            con.commit()
-            msg =  "Record successfully added"
-		return redirect(url_for('home'),msg=msg)
+         con = sqlite3.connect(db_file)
+         
+         cur = con.cursor()
+         cur.execute("INSERT INTO user  VALUES (?,?,?);",(first_name,last_name,email) )
+         con.commit()
+         msg =  "Record successfully added"
+         return redirect(url_for('home'),msg=msg)
       except:
          con.rollback()
          msg = 'somting went wrong please try again'
          return redirect(url_for('register'),msg=msg)
       
       finally:
-            con.close()
+
+            con.close()            
             return redirect(url_for('landing_page'))
            
    else:
