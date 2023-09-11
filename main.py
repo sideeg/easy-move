@@ -8,24 +8,13 @@ app = Flask(__name__)
 db_file = "/home/ubuntu/easy_move/db/easy_move.db"
 @app.route('/')
 def landing_page():
-        conn = sqlite3.connect(db_file)
-        cur = conn.cursor()
-        cur.execute("select * from user")
-        
-        rows = cur.fetchall();
-        
-        conn.close()
         return render_template("index.html",rows = rows)
 
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':
-      return request.form
-      user = request.form['first_name']
-       
-      return render_template('login.html')
+      return render_template('home.html')
    else:
-      
       return render_template('login.html')
 
 @app.route('/register',methods = ['POST', 'GET'])
@@ -56,6 +45,8 @@ def register():
    else:
       return render_template('register.html')
 
-
+@app.route('/home')
+def home():
+     return render_template('home.html')
 if __name__ == '__main__':
    app.run('0.0.0.0',5000,True)
