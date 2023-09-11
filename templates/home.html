@@ -1,24 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-   <body>
-      <table border = 1>
-         <thead>
-            <td>Name</td>
-            <td>last name </td>
-            <td>email</td>
-            
-         </thead>
-         
-         {% for row in rows %}
-            <tr>
-               <td>{{row["first_name"]}}</td>
-               <td>{{row["last_name"]}}</td>
-               <td> {{ row["email"]}}</td>
-               	
-            </tr>
-         {% endfor %}
-      </table>
-      
-      <a href = "/">Go back to home page</a>
-   </body>
+<head>
+	<title>Easy move</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'vendor/font-awesome/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css')}}">
+</head>
+<body>
+
+<div class="cover flexcolcen">
+	<h1>Easy move</h1>
+	<h4>address the challenge of finding the shortest route and obtaining weather conditions for a user's desired destination.
+</h4>
+	<a href="#" class="btn btn-default btn-green">CONTACT US</a>
+</div>
+
+<!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<!-- SECTION 2 -->
+<div class="about-us container">
+	<div class="flexcolcen feature">
+		<h2 class="fw7">THE MOST FLEXIBLE &amp; EASY TO USE APP</h2>
+		<h4 class="fw5">A BIT ABOUT US</h4>
+		<hr class="diamond-hr">
+		<p>travelers who seek efficient routes and want to be aware of weather conditions at their destinations.
+</p>
+	</div>
+	<div class="flexrowcen">
+		<div class="about-container">
+			<div class="img flexcolcen">
+				<i class="fa fa-mobile" aria-hidden="true"></i>
+			</div>
+			<h4>Weather Insights</h4>
+			<p>you can see the current weather conditions at your destination.
+            So that you can make informed decisions about your travel 
+                  and prepare for the weather.</p>
+<a href="#" class="btn btn-default btn-green">Try It</a>
+        </div>
+		<div class="about-container">
+			<div class="img flexcolcen">
+				<i class="fa fa-flask" aria-hidden="true"></i>
+			</div>
+			<h4>Route Alternatives</h4>
+			<p> you have the option to see alternative routes to your destination.
+            So that you can choose a route that suits your preferences or avoid traffic
+            </p>
+   <a href="#" class="btn btn-default btn-green">Try It</a>
+</div>
+		<div class="about-container">
+			<div class="img flexcolcen">
+				<i class="fa fa-code-fork" aria-hidden="true"></i>
+			</div>
+			<h4>Route Planning</h4>
+			<p> you can input your current location and specify your destination
+            So that you can receive the shortest possible route(in terms of 
+            time and distance) and estimated travel time to reach your destination.
+            </p>
+<a href="#" class="btn btn-default btn-green">Try It</a>
+</div>
+	</div>
+</div>
+
+
+<!-- SECTION 2 -->
+<div class="team">
+	<div class="flexcolcen">
+		<h2 class="fw7">Easy move functionality is not dependent on any specific locale; it can be used globally</h2>
+		<h4>make your making decion more easer</h4>
+		<hr class="diamond-hr">
+	</div>
+</div>
+
+<footer>
+	<div class="flexrowcen container fw7">
+		<a href="#">Contact</a>
+		<a href="#">Download</a>
+		<a href="#">Press</a>
+		<a href="#">Email</a>
+		<a href="#">Support</a>
+		<a href="#">Privacy Policy</a>
+	</div>
+	<p class="made-with-love text-center">Designed with <i class="fa fa-heart" aria-hidden="true"></i> &amp; <i class="fa fa-coffee" aria-hidden="true"></i> by <span class="fw7">Sideeg</span>.</p>
+</footer>
+</body>
 </html>
