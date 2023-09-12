@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, request, render_template
-from simple_geoip import GeoIP
+import requests
 from flask import jsonify
+from simple_geoip import GeoIP
 import sqlite3
 app = Flask(__name__)
 
@@ -65,7 +66,7 @@ def get_location():
     except ConnectionError:
        # If you get here, it means you were unable to reach the geoipify
        # service, most likely because of a network error on your end.
-       return 'ConnectionError'
+       return ('ConnectionError',-2)
        #except ServiceError:
        # If you get here, it means geoipify is having issues, so the request
        # couldn't be completed 
@@ -74,7 +75,18 @@ def get_location():
        # Something else happened (non-geoipify) related. Maybe you hit CTRL-C
        # while the program was running, the kernel is killing your process, or
        # something else all together.
-       return 'sonting went wrong'
-    return data
+       return ('something went wrong',-1)
+    return (data,1)
+
+#find the weather 
+@app.route('/get_weather')
+def weather():
+     location = get_location()
+     if location[1] <0 :
+        return   render_template('home.html')
+     
+     lat = str(location[0]['location']['lat'])
+     lon = str(location[0]['location']['lng'])
+     return requests.get('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid=e18cdbb73dd6981dfeafe9f7ef0df8d8').content
 if __name__ == '__main__':
    app.run('0.0.0.0',5000,True)
