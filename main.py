@@ -8,7 +8,7 @@ app = Flask(__name__)
 db_file = "/home/ubuntu/easy_move/db/easy_move.db"
 @app.route('/')
 def landing_page():
-        return render_template("index.html",rows = rows)
+        return render_template("index.html")
 
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
@@ -20,6 +20,8 @@ def login():
 @app.route('/register',methods = ['POST', 'GET'])
 def register():
    if request.method == 'POST':
+      return redirect(url_for('home'))
+      
       try:
          first_name = request.form['first_name']
          last_name = request.form['last_name']
@@ -34,9 +36,7 @@ def register():
          return redirect(url_for('home'),msg=msg)
       except:
          con.rollback()
-         msg = 'somting went wrong please try again'
-         return redirect(url_for('register'),msg=msg)
-      
+         
       finally:
 
             con.close()            
