@@ -3,6 +3,7 @@ import requests
 from flask import jsonify
 from simple_geoip import GeoIP
 import sqlite3
+
 app = Flask(__name__)
 
 #route to the db file
@@ -79,7 +80,7 @@ def get_location():
     return (data,1)
 
 #find the weather 
-@app.route('/get_weather')
+@app.route('/get_weather',methods = ['POST', 'GET'])
 def weather():
      location = get_location()
      if location[1] <0 :
